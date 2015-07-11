@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+    //冒泡机制
+    function newsort(a){
+        for(var i=0;i<a.length;i++){
+            for(var j=a.length-1;j>=i;j--){
+                if(a[j-1]>a[j]){
+                    var temp=a[j-1]
+                    a[j-1]=a[j]
+                    a[j]=temp
+                }
+            }
+        }
+        return a
+    }
+    console.log(newsort(arr))
+
+    //“sohu.com”和"blog.sohu"的最长公共子串是“sohu”，长度为4
+    var str1="sohu.com.nnnnnnn",
+        str2="blog.sohu.nnnnnnn",
+        a1='.',
+        a2='.';
+    function tsr(a1,a2,str1,str2){
+        var arr1=str1.split(a1);
+        var arr2=str2.split(a2);
+        var arr3=[],arr4=[];
+        for(var i in arr1){
+            for(var j in arr2){
+                if(arr1[i]==arr2[j]){
+                    arr3.push(arr1[i]);
+                }
+            }
+        }
+        for(var i in arr3){
+            arr4.push(arr3[i].length)
+        }
+        return Math.max.apply(null,arr4);
+    }
+    console.log(tsr(a1,a2,str1,str2));
+
+</script>
+</html>
